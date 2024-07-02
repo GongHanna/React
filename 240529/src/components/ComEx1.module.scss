@@ -1,0 +1,55 @@
+// scss 변수
+$orange: orange;
+$salmon: salmon;
+$lightblue: lightblue;
+
+// @mixin 선언
+@mixin boxStyle($item) {
+  // 지역 변수 선언
+  $width: 200px;
+  height: 200px;
+
+  @if $item % 2 == 0 {
+    $width: $width + 30;
+
+  } @else if $item % 3 == 0 {
+    $width: $width - 30;
+
+  } @else {
+    $width: $width;
+  }
+
+  transition: 0.3s;
+  font-size: 10px * $item;
+  &:hover {
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
+// css 작성법 -> scss 작성법
+// .wrapper .box {} -> .wrapper{ .box {} }
+// .wrapper .box.orange -> .wrapper { .box { &.orange {} } }
+.wrapper {
+  text-align: center;
+
+  .box {
+    border: 1px solid #000;
+    list-style: none;
+
+    &.orange {
+      background-color: $orange;
+      @include boxStyle(1); // @mixin 선언 사용
+    }
+    &.salmon {
+      background-color: $salmon;
+      @include boxStyle(2);
+    }
+    &.lightblue {
+      background-color: $lightblue;
+      @include boxStyle(3);
+    }
+    &:hover {
+      color: maroon;
+    }
+  }
+}

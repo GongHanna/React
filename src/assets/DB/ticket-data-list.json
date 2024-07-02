@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "imgUrl": "./images/ticket1.png",
+    "title": "달의 정원",
+    "date": "2024.03.27~2024.04.06",
+    "btn": "예매하기"
+  },
+  {
+    "id": 2,
+    "imgUrl": "./images/ticket2.png",
+    "title": "고진감래",
+    "date": "2023.04.15~2024.04.21",
+    "btn": "예매하기"
+  }
+]
